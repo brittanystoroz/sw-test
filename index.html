@@ -16,11 +16,24 @@
   <body>
     <h1>Lego Star Wars gallery</h1>
 
-    <section>
+    <section></section>
 
-    </section>
+     <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js', { 
+          scope: './' 
+        }).then(function(reg) {
+          console.log('Service Worker Successfully Registered');
+        }).catch(function(error) {
+          console.log('Registration failed with ' + error);
+        });
+      } else {
+        console.log('No service worker support :(');
+      }
+     </script>
 
     <script src="image-list.js"></script>
     <script src="app.js"></script>
+    <script src="logging.js"></script>
   </body>
 </html>
